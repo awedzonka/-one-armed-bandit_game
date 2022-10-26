@@ -2,27 +2,24 @@ class Wallet {
     constructor(money) {
         let _money = money;
         this.getWalletValue = () => _money;
-
-        this.checkCanPlay = value => {
+        this.checkCanPlay = (value) => {
             if (_money >= value) return true;
-            return false;
+            return false
         }
         this.changeWallet = (value, type = "+") => {
             if (typeof value === "number" && !isNaN(value)) {
-                if (type === "+") {
-                    return _money += value;
-                } else if (type === "-") { return _money - + value }
-                else {
-                    throw new Error("nieprawidłowy typ działania")
+                if (type === "+") return  _money += value;
+                else if (type === "-") {
+                    return _money -= value;
                 }
+                else throw new Error ("Nieprawdiłowy typ działania")
             }
             else {
-                console.log(typeof value);
-                throw new Error("Nieprawidlowa liczba")
+                throw new Error("Wpisz deklarowaną kwotę");
             }
         }
     }
 }
-// value jest wpisane w input
+const wallet = new Wallet(100);
 
-const wallet = new Wallet(200);
+
