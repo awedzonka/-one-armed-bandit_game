@@ -22,9 +22,11 @@ class Statistics {
      console.log(gameNumber);
      console.log(winNumber);
      console.log(loseGame);
-        // return [gameNumber, winNumber, loseGame]
+        return [gameNumber, winNumber, loseGame]
    
      
     }
 }
 const stats = new Statistics();
+
+export default Statistics; 

@@ -21,5 +21,6 @@ class Wallet {
     }
 }
 const wallet = new Wallet(100);
+export default Wallet;
 
 
