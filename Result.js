@@ -4,6 +4,7 @@ class Result {
         else return 0;
     }
     static checkWinner(draw) {
+        // return true;
         if (draw[0] === draw[1] && draw[0] === draw[2] || draw[0] !== draw[1] && draw[0] !== draw[2] && draw[1] !== draw[2])
             return true
         else return false

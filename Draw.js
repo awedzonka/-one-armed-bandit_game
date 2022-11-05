@@ -15,5 +15,5 @@ class Draw {
     }
 }
 
-// const draw = new Draw();
+
 // export default Draw;

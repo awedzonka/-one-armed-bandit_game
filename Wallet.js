@@ -5,8 +5,10 @@ class Wallet {
         this.checkCanPlay = (value) => {
             if (_money >= value) return true;
             return false
+
         }
         this.changeWallet = (value, type = "+") => {
+            console.log(this.getWalletValue());
             if (typeof value === "number" && !isNaN(value)) {
                 if (type === "+") return  _money += value;
                 else if (type === "-") {
