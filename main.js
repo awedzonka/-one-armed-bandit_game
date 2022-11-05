@@ -1,12 +1,8 @@
-import Statistics from "./Statistics.js";
-import Wallet from "./Wallet.js";
-import Draw from "./Draw.js";
+// import Statistics from "./Statistics.js";
+// import Wallet from "./Wallet.js";
+// import Draw from "./Draw.js";
 
 
 
-const wallet = new Wallet(6);
 
-console.log(wallet);
-
-let nummm = 1;
-
+const game = new Game(100);

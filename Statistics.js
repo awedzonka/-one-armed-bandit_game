@@ -15,7 +15,6 @@ class Statistics {
         console.log(gameResults);
     }
     showGameStatistics() {
-
         let gameNumber = this.gameResults.length;
         let winNumber = this.gameResults.filter(el => el.win).length;
         let loseGame = this.gameResults.filter(el => !el.win).length;
