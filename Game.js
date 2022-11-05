@@ -5,6 +5,7 @@ class Game {
         document.getElementById("zagraj").addEventListener("click", this.startGame);
         
 
+        
     }
 
     render() {

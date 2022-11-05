@@ -6,27 +6,27 @@ class Statistics {
         ]
     }
 
-    addGameToStatistics (win, bid) {
+    addGameToStatistics(win, bid) {
         let gameResult = {
             win,
             bid
         }
         this.gameResults.push(gameResult);
-    console.log(gameResults);
+        console.log(gameResults);
     }
     showGameStatistics() {
 
-     let gameNumber= this.gameResults.length;
-     let winNumber= this.gameResults.filter(el=>el.win).length;
-    let loseGame = this.gameResults.filter(el=>!el.win).length;
-     console.log(gameNumber);
-     console.log(winNumber);
-     console.log(loseGame);
+        let gameNumber = this.gameResults.length;
+        let winNumber = this.gameResults.filter(el => el.win).length;
+        let loseGame = this.gameResults.filter(el => !el.win).length;
+        console.log(gameNumber);
+        console.log(winNumber);
+        console.log(loseGame);
         return [gameNumber, winNumber, loseGame]
-   
-     
+
+
     }
 }
-const stats = new Statistics();
+// const stats = new Statistics();
 
-export default Statistics; 
+// export default Statistics; 
