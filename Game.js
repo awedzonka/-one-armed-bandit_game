@@ -27,33 +27,31 @@ class Game {
         this.inputBid.value = "";
     }
     startGame() {
-        if (this.inputBid.value < 1) return alert("Brak środków do dalszej gry.");
-        const bid = Math.floor(this.inputBid.value);
-        if(!this.wallet.checkCanPlay(bid)) {
-            alert ("Zmniejsz wysokość zakładu.")
+
+        if (this.inputBid.value.length === 0) {
+            return alert("Podaj stawkę");
         }
-        
-        this.draw= new Draw();
+
+        if (this.inputBid.value < 1) return alert("Stawka musi być więszka niż 0.");
+        const bid = Math.floor(this.inputBid.value);
+        if (!this.wallet.checkCanPlay(bid)) {
+            alert("Zmniejsz wysokość zakładu lub brak środków do dalszej gry")
+            return
+        }
+
+        this.draw = new Draw();
         const colors = this.draw.drawGetResult();
         const win = Result.checkWinner(colors);
-        let winningMoney;
+        let winningMoney=0;
         if (win) {
             winningMoney = Result.moneyWinInGame(win, bid);
             console.log(winningMoney);
             this.wallet.changeWallet(winningMoney);
         }
         else {
-            this.wallet.changeWallet(bid, "-");
-
+           this.wallet.changeWallet(bid, "-");
         }
 
-        // this.wallet.changeWallet(bid, "-");
-        // this.draw= new Draw();
-        // const colors = this.draw.drawGetResult();
-        // const win = Result.checkWinner(colors);
-        // let winningMoney = Result.moneyWinInGame(win, bid);
-        // console.log(winningMoney);
-        // this.wallet.changeWallet(winningMoney);
         this.stats.addGameToStatistics(win, bid);
         this.render(this.wallet.getWalletValue(), win, winningMoney, bid, this.stats.showGameStatistics(), colors);
     }
